@@ -51,29 +51,29 @@ end
 
 describe file('etc/hostname') do
   it { should be_file }
-  its(:content) { should contain /^black-pearl$/ }
+  its(:content) { should contain /^PiBox$/ }
 end
 
 describe file('etc/group') do
   it { should be_file }
-  its(:content) { should contain /^docker:x:.*:pirate/ }
-  its(:content) { should contain /^pirate:x:/ }
+  its(:content) { should contain /^docker:x:.*:boxp77/ }
+  its(:content) { should contain /^boxp77:x:/ }
 end
 
 describe file('etc/passwd') do
   it { should be_file }
-  its(:content) { should contain /^pirate:/ }
+  its(:content) { should contain /^boxp77:/ }
 end
 
 describe file('etc/shadow') do
   it { should be_file }
-  its(:content) { should contain /^pirate:/ }
+  its(:content) { should contain /^boxp77:/ }
 end
 
-describe file('etc/sudoers.d/user-pirate') do
+describe file('etc/sudoers.d/user-boxp77') do
   it { should be_file }
   it { should be_mode 440 }
-  its(:content) { should contain /^pirate ALL=NOPASSWD: ALL$/ }
+  its(:content) { should contain /^boxp77 ALL=NOPASSWD: ALL$/ }
 end
 
 describe file('root/.bash_prompt') do
@@ -97,7 +97,7 @@ describe file('etc/os-release') do
   its(:content) { should contain /HYPRIOT_OS=/ }
   its(:content) { should contain /HYPRIOT_TAG=/ }
   if ENV.fetch('TRAVIS_TAG','') != ''
-    its(:content) { should_not contain /dirty/ }
+    its(:content) { should_not contain /VooRPI/ }
   end
 end
 

@@ -12,15 +12,17 @@ HYPRIOT_GROUPNAME="docker"
 HYPRIOT_USERNAME="boxp77"
 HYPRIOT_PASSWORD="piboX91706"
 
+
 # Build Debian rootfs for ARCH={armhf,arm64,mips,i386,amd64}
 # - Debian armhf = ARMv6/ARMv7
 # - Debian arm64 = ARMv8/Aarch64
 # - Debian mips  = MIPS
 # - Debian i386  = Intel/AMD 32-bit
 # - Debian amd64 = Intel/AMD 64-bit
-BUILD_ARCH="${BUILD_ARCH:-ARMv7}"
+BUILD_ARCH="${BUILD_ARCH:-armhf}"
 QEMU_ARCH="${QEMU_ARCH}"
 HYPRIOT_TAG="${HYPRIOT_TAG:-VooRPI}"
+TRAVIS_TAG="${HYPRIOT_TAG:-TooRPI}"
 ROOTFS_DIR="/debian-${BUILD_ARCH}"
 
 # Show TRAVSI_TAG in travis builds
