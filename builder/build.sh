@@ -7,10 +7,10 @@ if [ ! -f /.dockerinit ]; then
 fi
 
 # Hypriot common settings
-HYPRIOT_HOSTNAME="black-pearl"
+HYPRIOT_HOSTNAME="PiBox"
 HYPRIOT_GROUPNAME="docker"
-HYPRIOT_USERNAME="pirate"
-HYPRIOT_PASSWORD="hypriot"
+HYPRIOT_USERNAME="boxp77"
+HYPRIOT_PASSWORD="piboX91706"
 
 # Build Debian rootfs for ARCH={armhf,arm64,mips,i386,amd64}
 # - Debian armhf = ARMv6/ARMv7
@@ -18,9 +18,9 @@ HYPRIOT_PASSWORD="hypriot"
 # - Debian mips  = MIPS
 # - Debian i386  = Intel/AMD 32-bit
 # - Debian amd64 = Intel/AMD 64-bit
-BUILD_ARCH="${BUILD_ARCH:-arm64}"
+BUILD_ARCH="${BUILD_ARCH:-ARMv7}"
 QEMU_ARCH="${QEMU_ARCH}"
-HYPRIOT_TAG="${HYPRIOT_TAG:-dirty}"
+HYPRIOT_TAG="${HYPRIOT_TAG:-VooRPI}"
 ROOTFS_DIR="/debian-${BUILD_ARCH}"
 
 # Show TRAVSI_TAG in travis builds
@@ -43,7 +43,7 @@ fi
 # Debootstrap a minimal Debian Jessie rootfs
 ${DEBOOTSTRAP_CMD} \
   --arch="${BUILD_ARCH}" \
-  --include="apt-transport-https,avahi-daemon,bash-completion,binutils,ca-certificates,curl,git-core,htop,locales,net-tools,openssh-server,parted,sudo,usbutils" \
+  --include="apt-transport-https,avahi-daemon,bash-completion,binutils,ca-certificates,curl,git-core,htop,locales,net-tools,openssh-server,parted,sudo,usbutils,nano" \
   --exclude="debfoster" \
   jessie \
   "${ROOTFS_DIR}" \
